@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Automation</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Home Automation</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#lights">Lights</a></li>
+                <li><a href="#temperature">Temperature</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#doors">Doors</a></li>
+            </ul>
+        </nav>
+        <section class="controls">
+            <div class="card" id="lights">
+                <img src="light-icon.png" alt="Lights" class="icon"><i class="fa-solid fa-circle-half-stroke"></i>
+                <h2>Lights</h2>
+                <button class="btn" id="toggleLights">Toggle Lights</button>
+            </div>
+            <div class="card" id="temperature">
+                <img src="temperature-icon.png" alt="Temperature" class="icon">
+                <h2>Temperature</h2>
+                <input type="range" id="temperature" min="16" max="30" value="22">
+                <p>Temperature: <span id="tempValue">22</span>°C</p>
+            </div>
+            <div class="card" id="security">
+                <img src="security-icon.png" alt="Security" class="icon">
+                <h2>Security</h2>
+                <button class="btn" id="activateAlarm">Activate Alarm</button>
+            </div>
+            <div class="card" id="security">
+                <img src="security-icon.png" alt="Security" class="icon">
+                <h2>Doors</h2>
+                <button class="btn" id="activateAlarm">Open Doors</button>
+            </div>
+            
+        </section>
+        <footer>
+            <p>&copy; 2025 Smart Home Automation. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("toggleLights").addEventListener("click", function() {
+            document.body.classList.toggle("dark-mode");
+            alert("Lights toggled!");
+        });
+
+        document.getElementById("temperature").addEventListener("input", function() {
+            document.getElementById("tempValue").innerText = this.value;
+        });
+
+        document.getElementById("activateAlarm").addEventListener("click", function() {
+            alert("Security alarm activated!");
+        });
+
+        document.getElementById("lockUnlock").addEventListener("click", function() {
+            alert("Door locked/unlocked!");
+        });
+    </script>
+</body>
+</html>
